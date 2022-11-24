@@ -9,9 +9,9 @@ function Home() {
         <Logo />
       </div>
       <div
-        className={`absolute top-[199px] left-1/2 transform -translate-x-1/2 w-3/5 max-w-[665px] h-fit  rounded-[50px] ${gradientgray}`}
+        className={`absolute top-32 xs:top-40 sm:top-[200px] left-1/2 transform -translate-x-1/2 w-4/5 xs:w-[70%] sm:w-[65%] first-letter: max-w-[665px] h-fit  rounded-[50px] ${gradientgray}`}
       >
-        <div className="bg-gray h-44"></div>
+        <div className="bg-gray h-fit"></div>
       </div>
     </div>
   );

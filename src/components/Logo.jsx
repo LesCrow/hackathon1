@@ -4,7 +4,7 @@ import logo from "../assets/Logo_EcoTripr.png";
 function Logo() {
   return (
     <div>
-      <img className="w-32 p-4" src={logo} />
+      <img className="absolute w-28 xs:w-36 sm:w-48 m-4" src={logo} />
     </div>
   );
 }
