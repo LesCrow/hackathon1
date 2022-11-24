@@ -1,10 +1,11 @@
-import React from "react";
-import UploadAndDisplayImage from "./components/upload";
+import React, { useState } from "react";
+
+import Main from "./Pages/Main";
 
 function App() {
   return (
     <div className="font-fredoka">
-      <UploadAndDisplayImage />
+      <Main />
     </div>
   );
 }
