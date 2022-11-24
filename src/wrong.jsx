@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import beach from "/beach.jpg";
-import { useState, createRef } from "react";
+import { useState } from "react";
+import { createRef } from "react";
 import * as htmlToImage from "html-to-image";
 
 const buttons = [
@@ -35,7 +36,7 @@ function App() {
   const downloadScreenshot = () => takeScreenShot(ref.current).then(download);
 
   return (
-    <div ref={ref} className="flex flex-col ">
+    <div className="flex flex-col ">
       <div className="flex flex-col ">
         <h1 className="w-full flex justify-center">
           Image recuperé par l'api avec le background en moins
@@ -61,10 +62,9 @@ function App() {
         <div className="flex flex-col justify-around"></div>
       </div>
       <h2>nouveau background pour l'image precedente</h2>
-      <div>
-        <img src={beach} className="w-full h-[600px] object-fill" />
-        <button onClick={downloadScreenshot}>Download screenshot</button>
-      </div>
+
+      <img src={beach} ref={ref} className="w-full h-[600px] object-fill" />
+      <button onClick={downloadScreenshot}>Download screenshot</button>
     </div>
   );
 }
