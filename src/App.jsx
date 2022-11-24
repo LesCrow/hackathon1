@@ -1,5 +1,4 @@
-import Home from "./Home";
-import Logo from "./Logo";
+import Home from "./Pages/Home";
 
 function App() {
   return (

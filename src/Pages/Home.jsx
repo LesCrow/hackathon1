@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "./Logo";
-import { gradientgray, gradientpurple } from "./utils/DesignTools";
+import Logo from "../components/Logo";
+import { gradientgray, gradientpurple } from "../utils/DesignTools";
 
 function Home() {
   return (
