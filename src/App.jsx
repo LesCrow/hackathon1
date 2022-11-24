@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { gradientpurple } from "./utils/DesignTools";
 
 import Main from "./Pages/Main";
 
 function App() {
   return (
-    <div className="font-nunito">
+    <div>
       <Main />
     </div>
   );
