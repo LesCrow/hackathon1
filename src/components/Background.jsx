@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Carousel } from "react-responsive-carousel";
 
 function Background() {
   const [notYetSelectedCategory, setNotYetSelectedCategory] = useState("");
@@ -36,12 +37,16 @@ function Background() {
       >
         GO !{" "}
       </button>
-      <div className="w-full flex flex-row justify-center  flex-wrap">
+
+      <div className="w-full flex flex-row  justify-center  flex-wrap">
         {backgroundImages.data &&
           backgroundImages.data.hits.map((item) => (
             <img className="w-1/3 m-1" src={item.largeImageURL} />
           ))}
       </div>
+
+      <label>Want Some ideas</label>
+      <select></select>
     </div>
   );
 }
