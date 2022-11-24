@@ -8,21 +8,12 @@ let slides = [
   <img src="https://picsum.photos/800/303/?random" alt="4" />,
   <img src="https://picsum.photos/800/304/?random" alt="5" />,
 ];
-{
-  (" ");
-}
+
 function CarouselHome() {
-  const callback = function (index) {
-    console.log("callback", index);
-  };
   return (
-    <div className="w-[150%] h-96 ">
-      <Carousel
-        slides={slides}
-        autoplay={true}
-        interval={2000}
-        onSlideChange={callback}
-      />
+    // NE reste plus qu'a faire les photos et faire le responsive
+    <div className="">
+      <Carousel className="" slides={slides} autoplay={true} interval={2000} />
     </div>
   );
 }
