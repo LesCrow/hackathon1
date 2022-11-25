@@ -35,8 +35,10 @@ const UploadAndDisplayImage = () => {
           "h-[350px] w-[70%] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
         } w-full h-4/5`}
       >
-        <ButtonCTA cta={"UPLOAD"} func={console.log("Bonjour")} />
-        <div className="mt-5" {...getRootProps()}>
+        <div className="flex justify-center">
+          <ButtonCTA cta={"UPLOAD"} func={console.log("Bonjour")} />
+        </div>
+        <div className="mt-5 flex justify-center" {...getRootProps()}>
           <input {...getInputProps()} />
           {isDragActive ? (
             <div className="h-4/5 w-4/5">Drop the Image here</div>
@@ -56,7 +58,11 @@ const UploadAndDisplayImage = () => {
           {yourImage.map((upFile) => {
             return (
               <div>
-                <img src={upFile.preview} className="w-[80%]" alt="preview" />
+                <img
+                  src={upFile.preview}
+                  className="w-auto p-3"
+                  alt="preview"
+                />
               </div>
             );
           })}
