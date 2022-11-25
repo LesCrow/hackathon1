@@ -15,7 +15,7 @@ function Home({ setIsHome, setIsStep1 }) {
           </span>
         </h1>
       </div>
-      <div className="text-center p-10 font-nunito text-darkText text-xs mt-16 ">
+      <div className="text-center p-10 font-nunito text-darkText text-lg mt-16 sm:text-lg">
         <div>
           <p>
             You surely asking yourself <b>what is an ecotripr ?</b> It is
@@ -26,10 +26,11 @@ function Home({ setIsHome, setIsStep1 }) {
         <div>
           <p>
             Feel what is like to travel around the world from your seat with
-            <span className="text-lg">
-              <b className="ml-1">
+            <br />
+            <span className="text-2xl">
+              <b>
                 just
-                <span className="text-purpleText font-extrabold ml-1">
+                <span className="text-purpleText font-extrabold ml-2">
                   3 steps:
                 </span>
               </b>
@@ -40,12 +41,12 @@ function Home({ setIsHome, setIsStep1 }) {
       <Step />
       <Step2 />
       <Step3 />
-      <div className="text-center m-4 font-nunito">
+      <div className="text-center font-nunito text-2xl mt-8">
         <p>
           <span className="text-purpleText font-extrabold">Easy</span>, isn't it
           ? So...
         </p>
-        <div className="flex justify-center h-7 my-4">
+        <div className="flex justify-center h-14 my-6">
           <img src="src/assets/fleche.png" alt="fleche" />
         </div>
         <ButtonCTA
