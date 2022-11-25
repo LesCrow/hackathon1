@@ -16,7 +16,7 @@ function Step2() {
           >
             <p className="text-darkText text-center font-nunito text-xs p-2">
               Choose the
-              <span className="text-purpleText font-extrabold">
+              <span className="text-purpleText font-extrabold mr-1">
                 {" "}
                 photo of the tripr
               </span>

@@ -5,14 +5,14 @@ function Step() {
   return (
     <div className="flex justify-center h-full mt-6">
       <div className="flex w-3/4 ">
-        <div className="flex flex-col text-center w-9/12">
+        <div className="flex flex-col text-center w-9/12 h-full">
           <h1
             className={`${gradientpurple} font-fredoka rounded-tl-xl rounded-bl-xl text-white`}
           >
             Step 1
           </h1>
           <p
-            className={`font-nunito ${gradientgray} text-darkText text-xs p-3`}
+            className={`h-full font-nunito ${gradientgray} text-darkText text-xs p-3`}
           >
             Research the{" "}
             <span className="text-purpleText font-extrabold">paradise</span> you

@@ -5,7 +5,7 @@ function Step3() {
   return (
     <div className="flex justify-center h-full mt-6">
       <div className="flex w-3/4 ">
-        <div className="flex flex-col text-center w-9/12">
+        <div className="flex flex-col text-center w-9/12 h-full">
           <h1
             className={`${gradientpurple} font-fredoka rounded-tl-xl rounded-bl-xl text-white`}
           >
@@ -17,7 +17,7 @@ function Step3() {
             EcoTripr
             <span className="text-purpleText font-extrabold">remove</span> the
             background and you just have to
-            <span className="text-purpleText font-extrabold">
+            <span className="text-purpleText ml-1 font-extrabold">
               place the tripr
             </span>
           </p>
