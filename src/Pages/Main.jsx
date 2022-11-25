@@ -11,8 +11,8 @@ function Main() {
   const [isFollowingSteps, setIsFollowingSteps] = useState(false);
 
   return (
-    <div className="bg-black">
-      <div className="bg-black">
+    <div>
+      <div>
         <Logo />
         {isFollowingSteps && <BarNav />}
         <div

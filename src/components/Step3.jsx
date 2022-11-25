@@ -9,15 +9,17 @@ function Step3() {
           <h1
             className={`${gradientpurple} font-fredoka rounded-tl-xl rounded-bl-xl text-white`}
           >
-            Step 1
+            Step 3
           </h1>
           <p
-            className={`font-nunito ${gradientgray} text-darkText text-xs p-3`}
+            className={`font-nunito ${gradientgray} text-darkText text-xs p-2`}
           >
-            Research the{" "}
-            <span className="text-purpleText font-extrabold">paradise</span> you
-            want to{" "}
-            <span className="text-purpleText font-extrabold">be in</span>
+            EcoTripr
+            <span className="text-purpleText font-extrabold">remove</span> the
+            background and you just have to
+            <span className="text-purpleText font-extrabold">
+              place the tripr
+            </span>
           </p>
         </div>
         <div

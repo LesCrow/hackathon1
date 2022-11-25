@@ -17,7 +17,7 @@ function Home() {
       <div className="text-center p-4 font-nunito text-darkText text-xs">
         <div>
           <p>
-            You Surely asking yourself <b>what is an ecotripr ?</b> It is
+            You surely asking yourself <b>what is an ecotripr ?</b> It is
             everyone who need to escape for a second.
           </p>
         </div>
@@ -34,6 +34,15 @@ function Home() {
       <Step />
       <Step2 />
       <Step3 />
+      <div className="text-center m-4 font-nunito">
+        <p>
+          <span className="text-purpleText font-extrabold">Easy</span>, isn't it
+          ? So...
+        </p>
+        <div className="flex justify-center h-7 my-4">
+          <img src="public/assets/fleche.png" alt="fleche" />
+        </div>
+      </div>
     </div>
   );
 }

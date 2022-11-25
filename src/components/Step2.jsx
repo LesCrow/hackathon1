@@ -14,7 +14,7 @@ function Step2() {
           <div
             className={`flex justify-center items-center h-full ${gradientgray}`}
           >
-            <p className="text-darkText text-center font-nunito text-xs">
+            <p className="text-darkText text-center font-nunito text-xs p-2">
               Choose the
               <span className="text-purpleText font-extrabold">
                 {" "}
