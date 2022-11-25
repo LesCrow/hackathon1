@@ -7,7 +7,7 @@ function Step2() {
       <div className="flex flex-row-reverse h-full w-3/4">
         <div className="flex flex-col">
           <h1
-            className={`${gradientpurple} p-2 flex justify-center text-white font-fredoka rounded-r-full`}
+            className={`${gradientpurple} text-2xl p-2 flex justify-center text-white font-fredoka rounded-r-full`}
           >
             Step 2
           </h1>

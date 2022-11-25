@@ -7,7 +7,7 @@ function Step3() {
       <div className="flex w-3/4 ">
         <div className="flex flex-col text-center w-9/12 h-full">
           <h1
-            className={`${gradientpurple} p-2 font-fredoka rounded-l-full text-white`}
+            className={`${gradientpurple} p-2 text-2xl font-fredoka rounded-l-full text-white`}
           >
             Step 3
           </h1>
@@ -16,8 +16,10 @@ function Step3() {
           >
             <p className={`font-nunito  text-darkText text-lg p-4`}>
               EcoTripr
-              <span className="text-purpleText font-extrabold">remove</span> the
-              background and you just have to
+              <span className="text-purpleText font-extrabold ml-1">
+                remove
+              </span>{" "}
+              the background and you just have to
               <span className="text-purpleText ml-1 font-extrabold">
                 place the tripr
               </span>
