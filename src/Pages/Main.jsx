@@ -6,20 +6,31 @@ import Home from "../components/Home/Home";
 import BarNav from "../components/Shared/BarNav";
 
 function Main() {
-  const [isHomeStep, setIsHomeStep] = useState(false);
-  const [isUploadStep, setIsUploadState] = useState(false);
-  const [isFollowingSteps, setIsFollowingSteps] = useState(false);
+  const [isHome, setIsHome] = useState(false);
+  const [isStep1, setIsStep1] = useState(true);
+  const [isStep2, setIsStep2] = useState(false);
+  const [isStep3, setIsStep3] = useState(false);
+  const [isDownload, steIsDownload] = useState(false);
+
+  const barConditions = isStep1 || isStep2 || isStep3;
 
   return (
     <div className={`h-screen w-full ${gradientpurple}`}>
       <Logo />
-      {isFollowingSteps && <BarNav />}
+      <BarNav
+        isStep1={isStep1}
+        setIsStep1={setIsStep1}
+        isStep2={isStep2}
+        setIsStep2={setIsStep2}
+        isStep3={isStep3}
+        setIsStep3={setIsStep3}
+      />
       <div
-        className={`absolute top-48 sm:top-[200px] left-1/2 transform -translate-x-1/2 
+        className={`absolute top-48 sm:top-[230px] left-1/2 transform -translate-x-1/2 
         w-4/5 xs:w-[70%] sm:w-[65%] first-letter: max-w-[665px] h-fit rounded-[35px] sm:rounded-[50px] ${gradientgray}`}
       >
-        {isUploadStep && <UploadAndDisplayImage />}
-        {isHomeStep && <Home />}
+        {isHome && <Home />}
+        {isStep2 && <UploadAndDisplayImage />}
       </div>
     </div>
   );

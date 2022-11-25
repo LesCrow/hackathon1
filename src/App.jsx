@@ -7,7 +7,7 @@ import Step_3 from "./assets/components/Step_3";
 
 function App() {
   return (
-    <div className="font-nunito">
+    <div className="font-nunito text-darkText">
       <Main />
       <CarouselHome />
       <Step_3 />
