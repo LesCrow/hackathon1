@@ -5,28 +5,35 @@ import { Carousel } from "react-responsive-carousel";
 function CarouselHome() {
   return (
     // NE reste plus qu'a faire les photos et faire le responsive
-    <div className="w-full mx-auto mt-40 px-4 md:w-10/12  ">
+    <div className=" max-w-[800px]  mx-auto mt-40 p-10">
       <Carousel
         autoPlay={true}
         infiniteLoop
         showStatus={false}
         showThumbs={false}
         showIndicators={false}
+        showArrows={false}
       >
         <img
-          className="md:h-64 md:object-cover md:w-full "
-          src="/beach-paradise.jpg"
+          className="  object-cover sm:object-fill   sm:rounded-md rounded-lg  md:w-[85] "
+          src="/fannyHippy.jpg"
         />
         <img
-          className="md:h-64 md:object-cover md:w-full "
-          src="/namibia.jpg"
+          className="  object-cover sm:object-fill   sm:rounded-md rounded-lg  md:w-[85] "
+          src="/johnHobbit.jpg"
         />
         <img
-          className="md:h-64 md:object-cover md:w-full "
-          src="/orion-nebula.jpg"
+          className="w-1/2  object-cover  sm:object-fill  sm:rounded-md rounded-lg  md:w-[85]"
+          src="/TomtomGPS.jpg"
         />
-        <img className="md:h-64 md:object-cover md:w-full " src="/temple.jpg" />
-        <img className="md:h-64 md:object-cover md:w-full " src="/yacht.jpg" />
+        <img
+          className="  object-cover sm:object-fill   sm:rounded-md rounded-lg  md:w-[85] "
+          src="/DamienPoney.jpg"
+        />
+        <img
+          className="  object-cover sm:object-fill   sm:rounded-md rounded-lg  md:w-[85] "
+          src="/Lucas.jpg"
+        />
       </Carousel>
     </div>
   );
