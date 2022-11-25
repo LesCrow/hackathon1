@@ -3,12 +3,14 @@ import { gradientdarkgray, gradientgray } from "../../utils/DesignTools";
 import useWindowSize from "../hooks/useWindowSize";
 
 function BarNav({
+  setIsHome,
   isStep1,
   setIsStep1,
   isStep2,
   setIsStep2,
   isStep3,
   setIsStep3,
+  setIsDownload,
 }) {
   const screenWidth = useWindowSize().width;
 
@@ -31,7 +33,11 @@ function BarNav({
       >
         <div
           onClick={() => (
-            setIsStep1(true), setIsStep2(false), setIsStep3(false)
+            setIsHome(false),
+            setIsStep1(true),
+            setIsStep2(false),
+            setIsStep3(false),
+            setIsDownload(false)
           )}
           className={`${gradientgray} w-12 md:w-16 h-12 md:h-16 rounded-full flex justify-center items-center`}
         >
@@ -48,7 +54,11 @@ function BarNav({
 
         <div
           onClick={() => (
-            setIsStep1(false), setIsStep2(true), setIsStep3(false)
+            setIsHome(false),
+            setIsStep1(false),
+            setIsStep2(true),
+            setIsStep3(false),
+            setIsDownload(false)
           )}
           className={`${step2ColorConditions} w-12 md:w-16 h-12 md:h-16 rounded-full flex justify-center items-center`}
         >
@@ -64,7 +74,11 @@ function BarNav({
         </div>
         <div
           onClick={() => (
-            setIsStep1(false), setIsStep2(false), setIsStep3(true)
+            setIsHome(false),
+            setIsStep1(false),
+            setIsStep2(false),
+            setIsStep3(true),
+            setIsDownload(false)
           )}
           className={`${step2or3ColorConditions} w-12 md:w-16 h-12 md:h-16 rounded-full flex justify-center items-center`}
         >
@@ -85,7 +99,13 @@ function BarNav({
       -translate-x-1/2 w-4/5 xs:w-[70%] sm:w-[65%] max-w-[665px] flex justify-between items-end"
     >
       <div
-        onClick={() => (setIsStep1(true), setIsStep2(false), setIsStep3(false))}
+        onClick={() => (
+          setIsHome(false),
+          setIsStep1(true),
+          setIsStep2(false),
+          setIsStep3(false),
+          setIsDownload(false)
+        )}
         className={`${gradientgray} w-12 h-12 rounded-full flex justify-center items-center`}
       >
         <p className="text-center align-middle font-fredoka font-medium text-3xl">
@@ -102,7 +122,13 @@ function BarNav({
       )}
 
       <div
-        onClick={() => (setIsStep1(false), setIsStep2(true), setIsStep3(false))}
+        onClick={() => (
+          setIsHome(false),
+          setIsStep1(false),
+          setIsStep2(true),
+          setIsStep3(false),
+          setIsDownload(false)
+        )}
         className={`${step2ColorConditions} w-12 h-12 rounded-full flex justify-center items-center`}
       >
         <p className="text-center align-middle font-fredoka font-medium text-3xl">
@@ -118,7 +144,13 @@ function BarNav({
         </div>
       )}
       <div
-        onClick={() => (setIsStep1(false), setIsStep2(false), setIsStep3(true))}
+        onClick={() => (
+          setIsHome(false),
+          setIsStep1(false),
+          setIsStep2(false),
+          setIsStep3(true),
+          setIsDownload(false)
+        )}
         className={`${step2or3ColorConditions} w-12 h-12 rounded-full flex justify-center items-center`}
       >
         <p className="text-center align-middle font-fredoka font-medium text-3xl">

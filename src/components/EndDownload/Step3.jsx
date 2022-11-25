@@ -11,7 +11,7 @@ const createFileName = (extension = "", ...names) => {
 
   return `${names.join("")}.${extension}`;
 };
-function Step_3() {
+function Step3() {
   const ref = createRef(null);
   const [size, setSize] = useState(200);
   const [isFlip, setFlip] = useState(false);
@@ -84,4 +84,4 @@ function Step_3() {
   );
 }
 
-export default Step_3;
+export default Step3;

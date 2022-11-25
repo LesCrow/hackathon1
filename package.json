@@ -11,11 +11,12 @@
   "dependencies": {
     "3d-react-carousal": "^5.0.0",
     "axios": "^1.2.0",
-    "framer-motion": "^7.6.11",
+    "framer-motion": "^7.6.12",
     "html-to-image": "^1.10.8",
     "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
