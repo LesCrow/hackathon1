@@ -9,19 +9,17 @@ function Logo({
   setIsDownload,
 }) {
   return (
-    <div>
-      <img
-        onClick={() => (
-          setIsHome(true),
-          setIsStep1(false),
-          setIsStep2(false),
-          setIsStep3(false),
-          setIsDownload(false)
-        )}
-        className="absolute w-28 xs:w-36 sm:w-48 m-4"
-        src={logo}
-      />
-    </div>
+    <img
+      onClick={() => (
+        setIsHome(true),
+        setIsStep1(false),
+        setIsStep2(false),
+        setIsStep3(false),
+        setIsDownload(false)
+      )}
+      className="absolute left-5 top-4 w-28 xs:w-36 sm:w-48 m-4"
+      src={logo}
+    />
   );
 }
 
