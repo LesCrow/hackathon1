@@ -16,6 +16,7 @@
     "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-dropzone": "^14.2.3",
     "yarn": "^1.22.19"
   },

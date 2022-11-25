@@ -54,7 +54,7 @@ function Step3() {
       </div>
       <div ref={ref} className="flex flex-col ">
         <div className="flex flex-col  ">
-          <div className="flex flex-row w-full justify-center"></div>{" "}
+          <div className="flex flex-row w-full justify-center" />
           <div className="flex justify-center pb-2">
             <motion.img
               id="range"
@@ -75,7 +75,7 @@ function Step3() {
       <div className="flex justify-center items-center">
         <button
           onClick={downloadScreenshot}
-          className="bg-slate-500 rounded-md  p-2 m-3 flex justify-center w-1/5 "
+          className="bg-slate-500 rounded-md p-2 m-3 flex justify-center w-1/5 "
         >
           Download screenshot
         </button>
