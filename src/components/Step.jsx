@@ -24,8 +24,8 @@ function Step() {
           className={`flex items-center justify-center w-full h-full ${gradientpurple} rounded-tr-md rounded-br-md`}
         >
           <img
-            src="public/assets/maldives.png"
-            alt=""
+            src="src/assets/maldives.png"
+            alt="Maldives"
             className={`p-2 ${gradientpurple} h-full object-cover rounded-lg`}
           />
         </div>

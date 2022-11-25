@@ -29,7 +29,7 @@ function Step2() {
           </div>
         </div>
         <img
-          src="public/assets/thomas.png"
+          src="src/assets/thomas.png"
           alt="Photo-Thomas"
           className={`p-2 ${gradientpurple} w-1/2 object-cover rounded-tl-md rounded-bl-md`}
         />

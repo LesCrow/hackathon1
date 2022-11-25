@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assets/Logo_EcoTripr.png";
 
 function Logo({
   setIsHome,

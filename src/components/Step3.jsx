@@ -26,7 +26,7 @@ function Step3() {
           className={`flex items-center justify-center w-full h-full ${gradientpurple} rounded-tr-md rounded-br-md`}
         >
           <img
-            src="public/assets/maldives.png"
+            src="src/assets/maldives.png"
             alt=""
             className={`p-2 ${gradientpurple} h-full object-cover rounded-lg`}
           />

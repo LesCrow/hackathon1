@@ -41,7 +41,7 @@ function Home() {
           ? So...
         </p>
         <div className="flex justify-center h-7 my-4">
-          <img src="public/assets/fleche.png" alt="fleche" />
+          <img src="src/assets/fleche.png" alt="fleche" />
         </div>
         <ButtonCTA
           cta={"GO !"}
