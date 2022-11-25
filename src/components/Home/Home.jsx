@@ -7,13 +7,13 @@ import Step3 from "../Step3";
 function Home({ setIsHome, setIsStep1 }) {
   return (
     <div>
-      <div className="">
-        <h1 className="top-0 left-1/4 font-fredoka text-3xl text-purpleText">
+      <div className="w-full text-center mt-8 flex justify-center">
+        <h1 className="font-fredoka font-medium text-5xl text-purpleText mr-28 relative">
           Welcome
+          <span className="absolute top-4 left-36 font-shalimar text-8xl text-darkText">
+            ecotripr
+          </span>
         </h1>
-      </div>
-      <div className="">
-        <h2 className="font-shalimar text-4xl text-darkText">ecotripr</h2>
       </div>
       <div className="text-center p-4 font-nunito text-darkText text-xs">
         <div>
