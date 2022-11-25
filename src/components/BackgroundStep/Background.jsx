@@ -55,7 +55,7 @@ function Background({
           name="background-choice"
           type="search"
           placeholder="Where you want to go ?"
-          className="w-full max-w-[400px] my-5 mx-auto border h-12 rounded-full text-sm md:text-lg pl-4 p-2"
+          className="w-full bg-white max-w-[400px] my-5 mx-auto border h-12 rounded-full text-sm md:text-lg pl-4 p-2"
           onChange={(e) => {
             setNotYetSelectedCategory(e.target.value);
           }}

@@ -4,7 +4,6 @@ import { gradientgray, gradientpurple } from "../utils/DesignTools";
 import UploadAndDisplayImage from "../components/UploadStep/Upload";
 import Home from "../components/Home/Home";
 import BarNav from "../components/Shared/BarNav";
-import Step3 from "../components/EndDownload/Step3";
 import CarouselHome from "../components/Home/CarouselHome";
 import Background from "../components/BackgroundStep/Background";
 
@@ -58,7 +57,11 @@ function Index() {
             setIsDownload={setIsDownload}
           />
         )}
-        <UploadAndDisplayImage isStep2={isStep2} isStep3={isStep3} />
+        <UploadAndDisplayImage
+          isStep2={isStep2}
+          isStep3={isStep3}
+          backgroundChosen={backgroundChosen}
+        />
       </div>
     </div>
   );
