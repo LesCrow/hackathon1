@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonCTA from "../Shared/ButtonCTA";
 import Step from "../Step";
 import Step2 from "../Step2";
 import Step3 from "../Step3";
@@ -42,6 +43,10 @@ function Home() {
         <div className="flex justify-center h-7 my-4">
           <img src="public/assets/fleche.png" alt="fleche" />
         </div>
+        <ButtonCTA
+          cta={"GO !"}
+          func={() => (setIsHome(false), setIsStep1(true))}
+        />
       </div>
     </div>
   );

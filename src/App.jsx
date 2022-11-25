@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { gradientpurple } from "./utils/DesignTools";
-
-import Main from "./Pages/Main";
+import Index from "./Pages/Index";
 
 function App() {
   return (
-    <div>
-      <Main />
+    <div className="font-nunito text-darkText">
+      <Index />
     </div>
   );
 }

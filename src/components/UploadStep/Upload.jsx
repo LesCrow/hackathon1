@@ -1,34 +1,66 @@
 import React, { useState } from "react";
+import { useDropzone } from "react-dropzone";
+import Bodies1bold from "../Shared/Bodies1bold";
+import ButtonCTA from "../Shared/ButtonCTA";
+import Titles from "../Shared/Titles";
 
 const UploadAndDisplayImage = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [yourImage, setImage] = useState([]);
+  const [isUploaded, setIsUploaded] = useState(false);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    accept: "image/*",
+    onDrop: (acceptedFiles) => {
+      setImage(
+        acceptedFiles.map((upFile) =>
+          Object.assign(upFile, {
+            preview: URL.createObjectURL(upFile),
+          })
+        )
+      );
+      setIsUploaded(true);
+    },
+  });
 
   return (
     <div>
-      <div>
-        <h1>Upload and Display Image usign React Hook's</h1>
-        {selectedImage && (
-          <div>
-            <img
-              alt="not fount"
-              width={"250px"}
-              src={URL.createObjectURL(selectedImage)}
-            />
-            <br />
-            <button onClick={() => setSelectedImage(null)}>Remove</button>
-          </div>
-        )}
-        <br />
-
-        <br />
-        <input
-          type="file"
-          name="myImage"
-          onChange={(event) => {
-            console.log(event.target.files[0]);
-            setSelectedImage(event.target.files[0]);
-          }}
-        />
+      <Titles greyTitle={"SELECT YOUR"} purpleTitle={"TRIPR"} />
+      <Bodies1bold
+        greyBody={"Choose the"}
+        purpleBody={"person"}
+        greyBodyNext={"you want in your paradise, maybe you ?"}
+      />
+      <div
+        className={`${
+          !isUploaded &&
+          "h-[350px] w-[70%] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
+        } w-full h-4/5`}
+      >
+        <ButtonCTA cta={"UPLOAD"} func={console.log("Bonjour")} />
+        <div className="mt-5" {...getRootProps()}>
+          <input {...getInputProps()} />
+          {isDragActive ? (
+            <div className="h-4/5 w-4/5">Drop the Image here</div>
+          ) : (
+            <div className=" font-nunito text-3xl">
+              or <span className="font-bold text-purpleText">drag & drop.</span>
+            </div>
+          )}
+        </div>
+        <p className="text-sm text-center mt-4">
+          Format <span className="font-bold mx-1">jpg, png</span> ou
+          <span className="font-bold mx-1">webp</span>.<br />
+          Max
+          <span className="font-bold mx-1">30 Mo</span>.
+        </p>
+        <div>
+          {yourImage.map((upFile) => {
+            return (
+              <div>
+                <img src={upFile.preview} className="w-[80%]" alt="preview" />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
