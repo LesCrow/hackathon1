@@ -38,7 +38,12 @@ function Background({
   return (
     <div className={`flex flex-col h-auto md:min-h-96px`}>
       <Titles greyTitle={"CHOOSE YOUR DREAMED"} purpleTitle={"DESTINATION"} />
-      {selectedCategory !== "" && (
+      {backgroundImages.data.hits.length === 0 && (
+        <p className="text-center p-10 font-nunito text-darkText text-lg mt-16 sm:text-lg">
+          NO MATCH FOUND !
+        </p>
+      )}
+      {selectedCategory !== "" && backgroundImages.data.hits.length > 0 && (
         <ResultCarousel
           backgroundImages={backgroundImages}
           setBackgroundChosen={setBackgroundChosen}
@@ -49,6 +54,7 @@ function Background({
           setIsDownload={setIsDownload}
         />
       )}
+
       <div className="relative flex flex-row items-center w-5/6 mt-8 mx-auto md:h-fit md:w-full max-w-[400px]">
         <input
           list="background"
