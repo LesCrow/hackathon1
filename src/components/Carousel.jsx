@@ -19,7 +19,7 @@ const ResultCarousel = ({ backgroundImages }) => {
             e.preventDefault();
           }}
         >
-          <img src={item.largeImageURL} className="object-cover h-72 " />
+          <img src={item.largeImageURL} className="object-cover h-72" />
         </div>
       ))}
     </Carousel>

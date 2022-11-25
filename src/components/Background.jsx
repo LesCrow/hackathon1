@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import { categories } from "../utils/Constants";
 import Button from "./Button";
 import ResultCarousel from "./Carousel";
+import { gradientgray } from "../utils/DesignTools";
 
 function Background() {
   const [notYetSelectedCategory, setNotYetSelectedCategory] = useState("");
@@ -23,25 +24,29 @@ function Background() {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <div className="w-full flex flex-col h-auto">
+    <div className={` flex flex-col h-auto ${gradientgray} rounded-lg m-10`}>
+      <div className="font-fredoka flex flex-col justify-center items-center">
+        CHOOSE YOUR DREAMED
+        <span className="text-purpleText">DESTINATION</span>
+      </div>
       {selectedCategory !== "" && (
         <div className="m-2">
           <ResultCarousel backgroundImages={backgroundImages} className="" />
         </div>
       )}
 
-      <div className="relative">
+      <div className="relative flex-row">
         <input
           list="background"
           name="background-choice"
           type="search"
-          placeholder="Where do you want to go ?"
-          className="m-5 border h-12 w-[80%] p-3 rounded-full"
+          placeholder="Where to go ?"
+          className="m-5 border h-12 w-[60%] p-3 rounded-full text-xs"
           onChange={(e) => {
             setNotYetSelectedCategory(e.target.value);
           }}
         />
-        <div className="flex justify-center">
+        <div className="">
           <Button
             category={"OK"}
             onClick={(e) => {
