@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 function CarouselHome() {
   return (
     // NE reste plus qu'a faire les photos et faire le responsive
-    <div className=" max-w-[800px]  mx-auto mt-40 p-10">
+    <div className=" max-w-[800px]  mx-auto mb-20 p-10">
       <Carousel
         autoPlay={true}
         infiniteLoop

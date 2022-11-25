@@ -21,7 +21,15 @@ export function getImage(file) {
   });
 }
 
-const UploadAndDisplayImage = ({ isStep2, isStep3, backgroundChosen }) => {
+const UploadAndDisplayImage = ({
+  isStep2,
+  isStep3,
+  backgroundChosen,
+  setIsHome,
+  setIsStep1,
+  setIsStep2,
+  setIsStep3,
+}) => {
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);
   const [responseImage, setResponseImage] = useState(null);
@@ -57,7 +65,13 @@ const UploadAndDisplayImage = ({ isStep2, isStep3, backgroundChosen }) => {
         }
       );
 
-      getImage(response.data).then((res) => setResponseImage(res));
+      getImage(response.data).then((res) => {
+        setResponseImage(res),
+          setIsHome(false),
+          setIsStep1(false),
+          setIsStep2(false),
+          setIsStep3(true);
+      });
     } catch (error) {
       console.log(error);
     }
@@ -89,7 +103,6 @@ const UploadAndDisplayImage = ({ isStep2, isStep3, backgroundChosen }) => {
                 <div className="h-4/5 ">Drop the Image here</div>
               ) : (
                 <div className="font-nunito text-3xl">
-                  or{" "}
                   <span className="font-bold text-purpleText">
                     drag & drop.
                   </span>
