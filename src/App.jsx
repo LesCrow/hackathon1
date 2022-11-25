@@ -4,7 +4,7 @@ import Main from "./Pages/Main";
 
 function App() {
   return (
-    <div className="font-nunito">
+    <div className="font-nunito text-darkText">
       <Main />
     </div>
   );
