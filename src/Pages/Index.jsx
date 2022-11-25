@@ -6,8 +6,9 @@ import Home from "../components/Home/Home";
 import BarNav from "../components/Shared/BarNav";
 import Step3 from "../components/EndDownload/Step3";
 import CarouselHome from "../components/Home/CarouselHome";
+import Background from "../components/BackgroundStep/Background";
 
-function Main() {
+function Index() {
   const [isHome, setIsHome] = useState(false);
   const [yourImage, setImage] = useState([]);
   const [isStep1, setIsStep1] = useState(true);
@@ -46,6 +47,7 @@ function Main() {
         w-4/5 xs:w-[70%] sm:w-[65%] first-letter: max-w-[665px] h-fit rounded-[35px] sm:rounded-[50px] ${gradientgray}`}
       >
         {isHome && <Home setIsHome={setIsHome} setIsStep1={setIsStep1} />}
+        {isStep1 && <Background />}
         {isStep2 && <UploadAndDisplayImage />}
         {isStep3 && <Step3 />}
       </div>
@@ -53,4 +55,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Index;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Main from "./Pages/Main";
+import Index from "./Pages/Index";
 
 function App() {
   return (
     <div className="font-nunito text-darkText">
-      <Main />
+      <Index />
     </div>
   );
 }

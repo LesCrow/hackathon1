@@ -1,6 +1,6 @@
 import React from "react";
 import { gradientdarkgray, gradientgray } from "../../utils/DesignTools";
-import useWindowSize from "../hooks/useWindowSize";
+import useWindowSize from "../../hooks/useWindowSize";
 
 function BarNav({
   setIsHome,
