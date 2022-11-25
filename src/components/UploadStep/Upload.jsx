@@ -21,7 +21,7 @@ export function getImage(file) {
   });
 }
 
-const UploadAndDisplayImage = ({ isStep2, isStep3 }) => {
+const UploadAndDisplayImage = ({ isStep2, isStep3, backgroundChosen }) => {
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);
   const [responseImage, setResponseImage] = useState(null);
@@ -119,7 +119,12 @@ const UploadAndDisplayImage = ({ isStep2, isStep3 }) => {
           </div>
         </div>
       )}
-      {isStep3 && <Step3 responseImage={responseImage} />}
+      {isStep3 && (
+        <Step3
+          responseImage={responseImage}
+          backgroundChosen={backgroundChosen}
+        />
+      )}
     </div>
   );
 };
