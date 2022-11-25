@@ -4,7 +4,7 @@ import Step from "../Step";
 import Step2 from "../Step2";
 import Step3 from "../Step3";
 
-function Home() {
+function Home({ setIsHome, setIsStep1 }) {
   return (
     <div>
       <div className="">
