@@ -77,19 +77,18 @@ const UploadAndDisplayImage = ({ isStep2, isStep3, backgroundChosen }) => {
           <div
             className={`${
               !isUploaded &&
-              "h-[350px] w-[70%] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
-            } w-full h-4/5`}
+              "h-[350px] w-[70%] min-h-[400px] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
+            } w-full `}
           >
-            <ButtonCTA
-              cta={"UPLOAD"}
-              func={() => removeBackgroundApiCall(acceptedFiles[0])}
-            />
-            <div className="mt-5" {...getRootProps()}>
+            <div
+              className="mt-5 w-full flex justify-center align-middle items-center"
+              {...getRootProps()}
+            >
               <input {...getInputProps()} />
               {isDragActive ? (
-                <div className="h-4/5 w-4/5">Drop the Image here</div>
+                <div className="h-4/5 ">Drop the Image here</div>
               ) : (
-                <div className=" font-nunito text-3xl">
+                <div className="font-nunito text-3xl">
                   or{" "}
                   <span className="font-bold text-purpleText">
                     drag & drop.
@@ -103,19 +102,19 @@ const UploadAndDisplayImage = ({ isStep2, isStep3, backgroundChosen }) => {
               Max
               <span className="font-bold mx-1">30 Mo</span>.
             </p>
-            <div>
+            <div className="w-full flex justify-center align-middle items-center">
               {yourImage.map((upFile) => {
                 return (
-                  <div>
-                    <img
-                      src={upFile.preview}
-                      className="w-[80%]"
-                      alt="preview"
-                    />
-                  </div>
+                  <img src={upFile.preview} className="w-[80%]" alt="preview" />
                 );
               })}
             </div>
+          </div>
+          <div className="flex justify-center pt-10">
+            <ButtonCTA
+              cta={"UPLOAD"}
+              func={() => removeBackgroundApiCall(acceptedFiles[0])}
+            />
           </div>
         </div>
       )}
