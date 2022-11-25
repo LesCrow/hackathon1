@@ -57,19 +57,29 @@ function Step3() {
           <div className="flex flex-row w-full justify-center" />
           <div className="flex justify-center pb-2">
             <motion.img
-              id="range"
               drag
+              dragConstraints={{
+                right: 250,
+                left: -350,
+                top: -175,
+                bottom: 350,
+              }}
+              id="range"
               src="/Photo_Thomas_pour_test.png"
-              style={{ width: `${size}px` }}
+              style={{
+                width: `${size}px`,
+              }}
               className={
-                isFlip ? "transform -scale-x-100 absolute" : "absolute"
+                isFlip
+                  ? "transform -scale-x-100 absolute object-cover"
+                  : "absolute object-cover"
               }
             />
           </div>
           <div className="flex flex-col justify-around"></div>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <img src={beach} className="w-full h-[600px] object-fill" />
+        <div className="flex flex-col justify-center items-center w-fit">
+          <motion.img src={beach} className="w-full h-[600px] object-fill" />
         </div>
       </div>
       <div className="flex justify-center items-center">
