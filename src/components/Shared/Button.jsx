@@ -1,5 +1,5 @@
 import React from "react";
-import { gradientpurple } from "../utils/DesignTools";
+import { gradientpurple } from "../../utils/DesignTools";
 
 function Button({ category, value, onClick }) {
   return (

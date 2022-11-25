@@ -1,11 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import { categories } from "../utils/Constants";
-import Button from "./Button";
-import ResultCarousel from "./Carousel";
-import { gradientgray } from "../utils/DesignTools";
-import { gradientpurple } from "../utils/DesignTools";
+import React, { useEffect, useState } from "react";
+import { categories } from "../../utils/Constants";
+import Button from "../Shared/Button";
+import ResultCarousel from "../Home/Carousel";
+import { gradientgray } from "../../utils/DesignTools";
+import { gradientpurple } from "../../utils/DesignTools";
 
 function Background() {
   const [notYetSelectedCategory, setNotYetSelectedCategory] = useState("");
