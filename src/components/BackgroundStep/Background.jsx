@@ -62,7 +62,7 @@ function Background({
         />
         <div className="absolute right-2">
           <button
-            className={`text-purpleText h-9 px-4 w-fit rounded-full hover:shadow-lg ${gradientpurple} text-white font-bold relative`}
+            className={`font-fredoka font-bold h-9 px-4 w-fit rounded-full hover:shadow-lg ${gradientpurple} text-white font-bold relative`}
             category={"OK"}
             onClick={(e) => {
               setSelectedCategory(notYetSelectedCategory.replace(" ", "+"));
@@ -73,11 +73,11 @@ function Background({
         </div>
       </div>
 
-      <p className="flex justify-center p-2 font-fredoka mt-4 mb-2 md:text-lg">
+      <p className="flex justify-center p-2 mt-4 mb-2 md:text-lg font-bold">
         Want some
         <span className="text-purpleText ml-1 md:text-lg"> ideas ?</span>
       </p>
-      <div className="flex justify-center flex-wrap gap-2 ">
+      <div className="flex justify-center flex-wrap gap-2">
         {categories.map((category) => (
           <ButtonCategories
             category={category}
