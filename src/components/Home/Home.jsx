@@ -15,20 +15,25 @@ function Home({ setIsHome, setIsStep1 }) {
           </span>
         </h1>
       </div>
-      <div className="text-center p-4 font-nunito text-darkText text-xs">
+      <div className="text-center p-10 font-nunito text-darkText text-xs mt-16 ">
         <div>
           <p>
             You surely asking yourself <b>what is an ecotripr ?</b> It is
             everyone who need to escape for a second.
           </p>
+          <br />
         </div>
         <div>
           <p>
             Feel what is like to travel around the world from your seat with
-            <b className="ml-1">
-              just
-              <span className="text-purpleText font-extrabold"> 3 steps:</span>
-            </b>
+            <span className="text-lg">
+              <b className="ml-1">
+                just
+                <span className="text-purpleText font-extrabold ml-1">
+                  3 steps:
+                </span>
+              </b>
+            </span>
           </p>
         </div>
       </div>
