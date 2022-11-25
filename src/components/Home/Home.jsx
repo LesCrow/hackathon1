@@ -8,9 +8,9 @@ function Home({ setIsHome, setIsStep1 }) {
   return (
     <div>
       <div className="w-full text-center mt-8 flex justify-center">
-        <h1 className="font-fredoka font-medium text-5xl text-purpleText mr-28 relative">
+        <h1 className="font-fredoka font-medium text-4xl sm:text-5xl text-purpleText mr-16 sm:mr-28 relative">
           Welcome
-          <span className="absolute top-4 left-36 font-shalimar text-8xl text-darkText">
+          <span className="absolute top-[18px] sm:top-4 left-[116px] sm:left-36 font-shalimar text-6xl sm:text-8xl text-darkText">
             ecotripr
           </span>
         </h1>
