@@ -1,28 +1,69 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Bodies1bold from "../Shared/Bodies1bold";
 import ButtonCTA from "../Shared/ButtonCTA";
 import Titles from "../Shared/Titles";
 
+export function getImage(file) {
+  const reader = new FileReader();
+  return new Promise((resolve, reject) => {
+    if (!file.type.match(/image.*/)) {
+      reject(new Error("Not an image"));
+      return;
+    }
+    reader.onload = (readerEvent) => {
+      resolve(readerEvent.target.result);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 const UploadAndDisplayImage = () => {
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: "image/*",
-    onDrop: (acceptedFiles) => {
-      setImage(
-        acceptedFiles.map((upFile) =>
-          Object.assign(upFile, {
-            preview: URL.createObjectURL(upFile),
-          })
-        )
+  const [responseImage, setResponseImage] = useState(null);
+  const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
+    useDropzone({
+      accept: "image/*",
+      onDrop: (acceptedFiles) => {
+        setImage(
+          acceptedFiles.map((upFile) =>
+            Object.assign(upFile, {
+              preview: URL.createObjectURL(upFile),
+            })
+          )
+        );
+        setIsUploaded(true);
+      },
+    });
+
+  const removeBackgroundApiCall = async (file) => {
+    const formData = new FormData();
+    formData.append("image_file", file);
+    try {
+      const response = await axios.post(
+        "https://clipdrop-api.co/remove-background/v1",
+        formData,
+        {
+          responseType: "blob",
+          headers: {
+            "Content-type": "multipart/form-data",
+            "x-api-key":
+              "f5066cc12057cddee035ac5c7cd42ba1b8b6dc3bcd6691ddce161b75a63ff3ea11f85f52b4d8bee92fc82a7910b76caf",
+          },
+        }
       );
-      setIsUploaded(true);
-    },
-  });
+
+      getImage(response.data).then((res) => setResponseImage(res));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
+      {responseImage && <img src={responseImage} />}
       <Titles greyTitle={"SELECT YOUR"} purpleTitle={"TRIPR"} />
       <Bodies1bold
         greyBody={"Choose the"}
@@ -35,7 +76,10 @@ const UploadAndDisplayImage = () => {
           "h-[350px] w-[70%] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
         } w-full h-4/5`}
       >
-        <ButtonCTA cta={"UPLOAD"} func={console.log("Bonjour")} />
+        <ButtonCTA
+          cta={"UPLOAD"}
+          func={() => removeBackgroundApiCall(acceptedFiles[0])}
+        />
         <div className="mt-5" {...getRootProps()}>
           <input {...getInputProps()} />
           {isDragActive ? (
