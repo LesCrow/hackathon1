@@ -28,10 +28,10 @@ function BarNav({
   if (screenWidth > 520) {
     return (
       <div
-        className="absolute top-28 sm:top-[150px] left-1/2 transform
+        className="absolute top-[150px] left-1/2 transform
         -translate-x-1/2 w-4/5 xs:w-[70%] sm:w-[65%] max-w-[665px] flex justify-between items-end"
       >
-        <div
+        <button
           onClick={() => (
             setIsHome(false),
             setIsStep1(true),
@@ -44,7 +44,7 @@ function BarNav({
           <p className="text-center align-middle font-fredoka font-medium text-3xl md:text-4xl">
             1
           </p>
-        </div>
+        </button>
 
         <div
           className={`border-dotted border-b-8 h-10 md:h-12 w-[30%] md:w-[33%] mb-2 flex items-center pl-2 md:pl-4 text-whiteText font-fredoka font-normal`}
@@ -52,7 +52,7 @@ function BarNav({
           <p>Background</p>
         </div>
 
-        <div
+        <button
           onClick={() => (
             setIsHome(false),
             setIsStep1(false),
@@ -65,14 +65,14 @@ function BarNav({
           <p className="text-center align-middle font-fredoka font-medium text-3xl md:text-4xl">
             2
           </p>
-        </div>
+        </button>
 
         <div
           className={`${step2or3ColorConditionsLine} border-dotted border-b-8 h-10 md:h-12 w-[30%] md:w-[33%] mb-2 flex items-center pl-2 md:pl-4 text-whiteText font-fredoka font-normal`}
         >
           {(isStep2 || isStep3) && <p>The tripr</p>}
         </div>
-        <div
+        <button
           onClick={() => (
             setIsHome(false),
             setIsStep1(false),
@@ -85,7 +85,7 @@ function BarNav({
           <p className="text-center align-middle font-fredoka font-medium text-3xl md:text-4xl">
             3
           </p>
-        </div>
+        </button>
         <div className="absolute right-0 translate-x-full h-10 md:h-12 pl-2 md:pl-4 mb-3 flex items-center text-whiteText font-fredoka font-normal">
           {isStep3 && <p>Optimize</p>}
         </div>
@@ -95,10 +95,10 @@ function BarNav({
 
   return (
     <div
-      className="absolute top-28 sm:top-[150px] left-1/2 transform
+      className="absolute top-[150px] left-1/2 transform
       -translate-x-1/2 w-4/5 xs:w-[70%] sm:w-[65%] max-w-[665px] flex justify-between items-end"
     >
-      <div
+      <button
         onClick={() => (
           setIsHome(false),
           setIsStep1(true),
@@ -111,7 +111,7 @@ function BarNav({
         <p className="text-center align-middle font-fredoka font-medium text-3xl">
           1
         </p>
-      </div>
+      </button>
 
       {isStep1 && (
         <div
@@ -121,7 +121,7 @@ function BarNav({
         </div>
       )}
 
-      <div
+      <button
         onClick={() => (
           setIsHome(false),
           setIsStep1(false),
@@ -134,7 +134,7 @@ function BarNav({
         <p className="text-center align-middle font-fredoka font-medium text-3xl">
           2
         </p>
-      </div>
+      </button>
 
       {isStep2 && (
         <div
@@ -143,7 +143,7 @@ function BarNav({
           <p>The tripr</p>
         </div>
       )}
-      <div
+      <button
         onClick={() => (
           setIsHome(false),
           setIsStep1(false),
@@ -156,7 +156,7 @@ function BarNav({
         <p className="text-center align-middle font-fredoka font-medium text-3xl">
           3
         </p>
-      </div>
+      </button>
       {isStep3 && (
         <div
           className={`border-dotted border-b-8 h-10 w-[50%] mb-2 flex items-center  text-whiteText font-fredoka font-normal`}

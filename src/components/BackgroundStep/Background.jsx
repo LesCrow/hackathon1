@@ -1,12 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { categories } from "../../utils/Constants";
-import Button from "../Shared/Button";
 import ResultCarousel from "../Home/Carousel";
-import { gradientgray } from "../../utils/DesignTools";
 import { gradientpurple } from "../../utils/DesignTools";
+import Titles from "../Shared/Titles";
+import ButtonCategories from "../Shared/ButtonCategories";
 
-function Background() {
+function Background({
+  setBackgroundChosen,
+  setIsHome,
+  setIsStep1,
+  setIsStep2,
+  setIsStep3,
+  setIsDownload,
+}) {
   const [notYetSelectedCategory, setNotYetSelectedCategory] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [backgroundImages, setBackgroundImages] = useState([]);
@@ -21,36 +28,41 @@ function Background() {
     getData().finally(() => setIsLoading(false));
   }, [selectedCategory]);
 
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading)
+    return (
+      <div className="h-96 text-center font-fredoka font-bold text-purpleText text-3xl pt-44">
+        loading...
+      </div>
+    );
 
   return (
-    <div
-      className={` flex flex-col h-auto md:min-h-96px md:justify-around ${gradientgray} rounded-lg m-10 p-4 md:m-20 md:gap-16`}
-    >
-      <div className="font-fredoka flex flex-col justify-center items-center mb-4 md:text-2xl">
-        CHOOSE YOUR DREAMED
-        <span className="text-purpleText">DESTINATION</span>
-      </div>
+    <div className={`flex flex-col h-auto md:min-h-96px`}>
+      <Titles greyTitle={"CHOOSE YOUR DREAMED"} purpleTitle={"DESTINATION"} />
       {selectedCategory !== "" && (
-        <div className="m-2">
-          <ResultCarousel backgroundImages={backgroundImages} className="" />
-        </div>
+        <ResultCarousel
+          backgroundImages={backgroundImages}
+          setBackgroundChosen={setBackgroundChosen}
+          setIsHome={setIsHome}
+          setIsStep1={setIsStep1}
+          setIsStep2={setIsStep2}
+          setIsStep3={setIsStep3}
+          setIsDownload={setIsDownload}
+        />
       )}
-
-      <div className="relative flex flex-row items-center justify-around md:w-full ">
+      <div className="relative flex flex-row items-center w-5/6 mt-8 mx-auto md:h-fit md:w-full max-w-[400px]">
         <input
           list="background"
           name="background-choice"
           type="search"
-          placeholder="Where do you want to go ?"
-          className="my-5 border h-12 w-[80%]  rounded-full text-xs md:text-lg p-1 md:p-5 absolute md:w-1/2 "
+          placeholder="Where you want to go ?"
+          className="w-full max-w-[400px] my-5 mx-auto border h-12 rounded-full text-sm md:text-lg pl-4 p-2"
           onChange={(e) => {
             setNotYetSelectedCategory(e.target.value);
           }}
         />
-        <div className=" ml-36 md:ml-[530px]">
+        <div className="absolute right-2">
           <button
-            className={`text-violet-600  h-10 px-4  md:px-7 w-fit rounded-full hover:shadow-lg ${gradientpurple} text-white font-bold relative`}
+            className={`text-purpleText h-9 px-4 w-fit rounded-full hover:shadow-lg ${gradientpurple} text-white font-bold relative`}
             category={"OK"}
             onClick={(e) => {
               setSelectedCategory(notYetSelectedCategory.replace(" ", "+"));
@@ -61,13 +73,13 @@ function Background() {
         </div>
       </div>
 
-      <p className="flex justify-center p-2 font-fredoka mt-4 mb-2 md:text-lg ">
-        Want some{" "}
-        <span className="text-violet-600 ml-1 md:text-lg"> ideas ?</span>
+      <p className="flex justify-center p-2 font-fredoka mt-4 mb-2 md:text-lg">
+        Want some
+        <span className="text-purpleText ml-1 md:text-lg"> ideas ?</span>
       </p>
       <div className="flex justify-center flex-wrap gap-2 ">
         {categories.map((category) => (
-          <Button
+          <ButtonCategories
             category={category}
             value={category}
             onClick={(e) => setSelectedCategory(e.target.value)}
