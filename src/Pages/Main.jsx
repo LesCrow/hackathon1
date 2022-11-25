@@ -6,7 +6,8 @@ import Home from "../components/Home/Home";
 
 function Main() {
   const [isHomeStep, setIsHomeStep] = useState(false);
-  const [isUploadStep, setIsUploadState] = useState(false);
+  const [yourImage, setImage] = useState([]);
+  const [isUploadStep, setIsUploadStep] = useState(true);
 
   return (
     <div className={`h-screen w-full ${gradientpurple}`}>
