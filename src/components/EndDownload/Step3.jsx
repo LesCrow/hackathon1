@@ -11,7 +11,8 @@ const createFileName = (extension = "", ...names) => {
 
   return `${names.join("")}.${extension}`;
 };
-function Step3() {
+
+function Step3({ responseImage }) {
   const ref = createRef(null);
   const [size, setSize] = useState(200);
   const [isFlip, setFlip] = useState(false);
@@ -52,9 +53,8 @@ function Step3() {
           Flip me !
         </button>
       </div>
-      <div ref={ref} className="flex flex-col ">
+      <div ref={ref} className="flex relative flex-col ">
         <div className="flex flex-col  ">
-          <div className="flex flex-row w-full justify-center" />
           <div className="flex justify-center pb-2">
             <motion.img
               drag
@@ -65,7 +65,7 @@ function Step3() {
                 bottom: 350,
               }}
               id="range"
-              src="/Photo_Thomas_pour_test.png"
+              src={responseImage}
               style={{
                 width: `${size}px`,
               }}
@@ -76,7 +76,6 @@ function Step3() {
               }
             />
           </div>
-          <div className="flex flex-col justify-around"></div>
         </div>
         <div className="flex flex-col justify-center items-center w-fit">
           <motion.img src={beach} className="w-full h-[600px] object-fill" />

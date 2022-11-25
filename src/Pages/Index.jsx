@@ -58,8 +58,7 @@ function Index() {
             setIsDownload={setIsDownload}
           />
         )}
-        {isStep2 && <UploadAndDisplayImage />}
-        {isStep3 && <Step3 />}
+        <UploadAndDisplayImage isStep2={isStep2} isStep3={isStep3} />
       </div>
     </div>
   );
