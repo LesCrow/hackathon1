@@ -7,16 +7,16 @@ function Step2() {
       <div className="flex flex-row-reverse h-full w-3/4">
         <div className="flex flex-col">
           <h1
-            className={`${gradientpurple} flex justify-center text-white font-fredoka rounded-tr-xl rounded-br-xl`}
+            className={`${gradientpurple} p-2 flex justify-center text-white font-fredoka rounded-r-full`}
           >
             Step 2
           </h1>
           <div
             className={`flex justify-center items-center h-full ${gradientgray}`}
           >
-            <p className="text-darkText text-center font-nunito text-xs p-2">
+            <p className="text-darkText text-lg p-4 text-center font-nunito ">
               Choose the
-              <span className="text-purpleText font-extrabold">
+              <span className="text-purpleText font-extrabold mr-1">
                 {" "}
                 photo of the tripr
               </span>
