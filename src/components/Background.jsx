@@ -26,9 +26,9 @@ function Background() {
 
   return (
     <div
-      className={` flex flex-col h-auto ${gradientgray} rounded-lg m-10 p-4`}
+      className={` flex flex-col h-auto md:min-h-96px md:justify-around ${gradientgray} rounded-lg m-10 p-4 md:m-20 md:gap-16`}
     >
-      <div className="font-fredoka flex flex-col justify-center items-center">
+      <div className="font-fredoka flex flex-col justify-center items-center mb-4 md:text-2xl">
         CHOOSE YOUR DREAMED
         <span className="text-purpleText">DESTINATION</span>
       </div>
@@ -38,20 +38,20 @@ function Background() {
         </div>
       )}
 
-      <div className="relative flex flex-row items-center justify-around ">
+      <div className="relative flex flex-row items-center justify-around md:w-full ">
         <input
           list="background"
           name="background-choice"
           type="search"
           placeholder="Where do you want to go ?"
-          className="my-5 border h-12 w-[80%]  rounded-full text-xs p-1"
+          className="my-5 border h-12 w-[80%]  rounded-full text-xs md:text-lg p-1 md:p-5 absolute md:w-1/2 "
           onChange={(e) => {
             setNotYetSelectedCategory(e.target.value);
           }}
         />
-        <div className="flex ">
+        <div className=" ml-36 md:ml-[530px]">
           <button
-            className={`text-violet-600 h-10 w-10  p-2 rounded-full hover:shadow-lg ${gradientpurple} text-white font-semibold hover:bg-white hover:text-violet-900 `}
+            className={`text-violet-600  h-10 px-4  md:px-7 w-fit rounded-full hover:shadow-lg ${gradientpurple} text-white font-bold relative`}
             category={"OK"}
             onClick={(e) => {
               setSelectedCategory(notYetSelectedCategory.replace(" ", "+"));
@@ -62,10 +62,11 @@ function Background() {
         </div>
       </div>
 
-      <p className="flex justify-center p-2 font-fredoka">
-        Want some <span className="text-violet-600 ml-1"> ideas ?</span>
+      <p className="flex justify-center p-2 font-fredoka mt-4 mb-2 md:text-lg ">
+        Want some{" "}
+        <span className="text-violet-600 ml-1 md:text-lg"> ideas ?</span>
       </p>
-      <div className="flex justify-around flex-wrap gap-2 ">
+      <div className="flex justify-center flex-wrap gap-2 ">
         {categories.map((category) => (
           <Button
             category={category}
