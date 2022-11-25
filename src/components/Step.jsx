@@ -7,7 +7,7 @@ function Step() {
       <div className="flex w-3/4 ">
         <div className="flex flex-col text-center w-9/12 h-full">
           <h1
-            className={`${gradientpurple} font-fredoka py-2 rounded-l-full text-white`}
+            className={`${gradientpurple} font-fredoka py-2 sm:py-3 rounded-l-full text-white`}
           >
             Step 1
           </h1>
@@ -16,7 +16,7 @@ function Step() {
           >
             <div>
               <p
-                className={`text-lg p-4 align-center font-nunito text-darkText text-xs p-3`}
+                className={`text-lg p-4 align-center font-nunito text-darkText`}
               >
                 Research the{" "}
                 <span className="text-purpleText font-extrabold">paradise</span>{" "}
