@@ -43,7 +43,7 @@ function Step3({ responseImage, backgroundChosen }) {
               SIZE ME !
             </label>
             <input
-              className="range range-xs hover:scale-110"
+              className="range range-xs hover:scale-110 bg-white"
               id="ranger"
               type="range"
               min="50"
