@@ -12,8 +12,13 @@ let slides = [
 function CarouselHome() {
   return (
     // NE reste plus qu'a faire les photos et faire le responsive
-    <div className="">
-      <Carousel className="" slides={slides} autoplay={true} interval={2000} />
+    <div className="h-96 max-w-[665px] mx-auto pt-36">
+      <Carousel
+        slides={slides}
+        autoplay={true}
+        interval={2000}
+        style={{ height: "600px" }}
+      />
     </div>
   );
 }
