@@ -1,25 +1,33 @@
 import React from "react";
-import { Carousel } from "3d-react-carousal";
-
-let slides = [
-  <img src="https://picsum.photos/800/300/?random" alt="1" />,
-  <img src="https://picsum.photos/800/301/?random" alt="2" />,
-  <img src="https://picsum.photos/800/302/?random" alt="3" />,
-  <img src="https://picsum.photos/800/303/?random" alt="4" />,
-  <img src="https://picsum.photos/800/304/?random" alt="5" />,
-];
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function CarouselHome() {
   return (
     // NE reste plus qu'a faire les photos et faire le responsive
-    <div className="w-4/5 max-w-[500px] mx-auto pt-36">
+    <div className="w-full mx-auto mt-40 px-4 md:w-10/12  ">
       <Carousel
-        slides={slides}
-        autoplay={true}
-        interval={2000}
-        arrows={true}
-        style={{ height: 100 }}
-      />
+        autoPlay={true}
+        infiniteLoop
+        showStatus={false}
+        showThumbs={false}
+        showIndicators={false}
+      >
+        <img
+          className="md:h-64 md:object-cover md:w-full "
+          src="/beach-paradise.jpg"
+        />
+        <img
+          className="md:h-64 md:object-cover md:w-full "
+          src="/namibia.jpg"
+        />
+        <img
+          className="md:h-64 md:object-cover md:w-full "
+          src="/orion-nebula.jpg"
+        />
+        <img className="md:h-64 md:object-cover md:w-full " src="/temple.jpg" />
+        <img className="md:h-64 md:object-cover md:w-full " src="/yacht.jpg" />
+      </Carousel>
     </div>
   );
 }
