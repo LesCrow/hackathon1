@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Step3 from "../EndDownload/Step3";
-
 import Bodies1bold from "../Shared/Bodies1bold";
 import ButtonCTA from "../Shared/ButtonCTA";
 import Titles from "../Shared/Titles";
@@ -30,6 +29,8 @@ const UploadAndDisplayImage = ({
   setIsStep2,
   setIsStep3,
 }) => {
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);
   const [responseImage, setResponseImage] = useState(null);
@@ -59,8 +60,7 @@ const UploadAndDisplayImage = ({
           responseType: "blob",
           headers: {
             "Content-type": "multipart/form-data",
-            "x-api-key":
-              "f5066cc12057cddee035ac5c7cd42ba1b8b6dc3bcd6691ddce161b75a63ff3ea11f85f52b4d8bee92fc82a7910b76caf",
+            "x-api-key": apiKey,
           },
         }
       );
