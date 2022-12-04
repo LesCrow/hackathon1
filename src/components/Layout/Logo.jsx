@@ -1,7 +1,10 @@
 import React from "react";
 import logo from "../../assets/Logo_EcoTripr.png";
+import { useStepContext } from "../../Context/StepContext";
 
-function Logo({ setStep }) {
+function Logo() {
+  const { setStep } = useStepContext();
+
   return (
     <img
       onClick={() => setStep(0)}

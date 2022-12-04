@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useImageContext } from "../../Context/Imagecontext";
+import { useStepContext } from "../../Context/StepContext";
 import Bodies1bold from "../Shared/Bodies1bold";
 import ButtonCTA from "../Shared/ButtonCTA";
 import Titles from "../Shared/Titles";
@@ -20,9 +21,10 @@ export function getImage(file) {
   });
 }
 
-const UploadAndDisplayImage = ({ step, setStep }) => {
-  const apiKey = import.meta.env.VITE_API_KEY;
+const UploadAndDisplayImage = () => {
+  const { setStep } = useStepContext();
 
+  const apiKey = import.meta.env.VITE_API_KEY;
   const { responseImage, setResponseImage } = useImageContext();
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);

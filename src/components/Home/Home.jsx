@@ -1,11 +1,14 @@
 import React from "react";
+import { useStepContext } from "../../Context/StepContext";
 import ButtonCTA from "../Shared/ButtonCTA";
 import Step from "../Step";
 import Step2 from "../Step2";
 import Step3 from "../Step3";
 import CarouselHome from "./CarouselHome";
 
-function Home({ setStep }) {
+function Home() {
+  const { setStep } = useStepContext();
+
   return (
     <div>
       <div className="w-full text-center mt-8 flex justify-center">

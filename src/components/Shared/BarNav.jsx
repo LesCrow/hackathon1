@@ -1,9 +1,11 @@
 import React from "react";
 import { gradientdarkgray, gradientgray } from "../../utils/DesignTools";
 import useWindowSize from "../../hooks/useWindowSize";
+import { useStepContext } from "../../Context/StepContext";
 
-function BarNav({ step, setStep, setIsDownload }) {
+function BarNav() {
   const screenWidth = useWindowSize().width;
+  const { step, setStep } = useStepContext();
 
   const step2ColorConditions =
     step === 2 || step === 3

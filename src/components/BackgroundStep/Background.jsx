@@ -5,8 +5,11 @@ import ResultCarousel from "../Home/Carousel";
 import { gradientpurple } from "../../utils/DesignTools";
 import Titles from "../Shared/Titles";
 import ButtonCategories from "../Shared/ButtonCategories";
+import { useStepContext } from "../../Context/StepContext";
 
-function Background({ setBackgroundChosen, setIsDownload, setStep }) {
+function Background({ setBackgroundChosen, setIsDownload }) {
+  const { step, setStep } = useStepContext();
+
   const [notYetSelectedCategory, setNotYetSelectedCategory] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [backgroundImages, setBackgroundImages] = useState([]);
