@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useImageContext } from "../../Context/Imagecontext";
-import Step3 from "../EndDownload/Step3";
-
 import Bodies1bold from "../Shared/Bodies1bold";
 import ButtonCTA from "../Shared/ButtonCTA";
 import Titles from "../Shared/Titles";
@@ -23,6 +21,8 @@ export function getImage(file) {
 }
 
 const UploadAndDisplayImage = ({ step, setStep }) => {
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   const { responseImage, setResponseImage } = useImageContext();
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);
@@ -52,7 +52,7 @@ const UploadAndDisplayImage = ({ step, setStep }) => {
           responseType: "blob",
           headers: {
             "Content-type": "multipart/form-data",
-            "x-api-key": "",
+            "x-api-key": apiKey,
           },
         }
       );
