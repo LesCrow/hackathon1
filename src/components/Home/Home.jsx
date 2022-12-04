@@ -3,8 +3,9 @@ import ButtonCTA from "../Shared/ButtonCTA";
 import Step from "../Step";
 import Step2 from "../Step2";
 import Step3 from "../Step3";
+import CarouselHome from "./CarouselHome";
 
-function Home({ setIsHome, setIsStep1 }) {
+function Home({ setStep }) {
   return (
     <div>
       <div className="w-full text-center mt-8 flex justify-center">
@@ -49,11 +50,9 @@ function Home({ setIsHome, setIsStep1 }) {
         <div className="flex justify-center h-14 my-6">
           <img src="src/assets/fleche.png" alt="fleche" />
         </div>
-        <ButtonCTA
-          cta={"GO !"}
-          func={() => (setIsHome(false), setIsStep1(true))}
-        />
+        <ButtonCTA cta={"GO !"} func={() => setStep(1)} />
       </div>
+      <CarouselHome />
     </div>
   );
 }

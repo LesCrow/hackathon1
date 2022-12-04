@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import ImageContextProvider from "./Context/Imagecontext";
 import Index from "./Pages/Index";
 
 function App() {
   return (
-    <div className="font-nunito text-darkText">
-      <Index />
-    </div>
+    <ImageContextProvider>
+      <div className="font-nunito text-darkText">
+        <Index />
+      </div>
+    </ImageContextProvider>
   );
 }
 

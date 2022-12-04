@@ -5,6 +5,7 @@ import { useState, createRef } from "react";
 import * as htmlToImage from "html-to-image";
 import ButtonCTA from "../Shared/ButtonCTA";
 import { gradientpurple } from "../../utils/DesignTools";
+import { useImageContext } from "../../Context/Imagecontext";
 
 const createFileName = (extension = "", ...names) => {
   if (!extension) {
@@ -14,7 +15,8 @@ const createFileName = (extension = "", ...names) => {
   return `${names.join("")}.${extension}`;
 };
 
-function Step3({ responseImage, backgroundChosen }) {
+function Step3({ backgroundChosen }) {
+  const { responseImage } = useImageContext();
   const ref = createRef(null);
   const [size, setSize] = useState(200);
   const [isFlip, setFlip] = useState(false);

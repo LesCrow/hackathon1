@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { useImageContext } from "../../Context/Imagecontext";
 import Step3 from "../EndDownload/Step3";
 
 import Bodies1bold from "../Shared/Bodies1bold";
@@ -21,18 +22,10 @@ export function getImage(file) {
   });
 }
 
-const UploadAndDisplayImage = ({
-  isStep2,
-  isStep3,
-  backgroundChosen,
-  setIsHome,
-  setIsStep1,
-  setIsStep2,
-  setIsStep3,
-}) => {
+const UploadAndDisplayImage = ({ step, setStep }) => {
+  const { responseImage, setResponseImage } = useImageContext();
   const [yourImage, setImage] = useState([]);
   const [isUploaded, setIsUploaded] = useState(false);
-  const [responseImage, setResponseImage] = useState(null);
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
       accept: "image/*",
@@ -59,84 +52,71 @@ const UploadAndDisplayImage = ({
           responseType: "blob",
           headers: {
             "Content-type": "multipart/form-data",
-            "x-api-key":
-              "f5066cc12057cddee035ac5c7cd42ba1b8b6dc3bcd6691ddce161b75a63ff3ea11f85f52b4d8bee92fc82a7910b76caf",
+            "x-api-key": "",
           },
         }
       );
 
       getImage(response.data).then((res) => {
-        setResponseImage(res),
-          setIsHome(false),
-          setIsStep1(false),
-          setIsStep2(false),
-          setIsStep3(true);
+        setResponseImage(res);
       });
     } catch (error) {
       console.log(error);
+    } finally {
+      setStep(3);
     }
   };
 
   return (
     <div>
-      {isStep2 && (
-        <div>
-          {responseImage && <img src={responseImage} />}
-          <Titles greyTitle={"SELECT YOUR"} purpleTitle={"TRIPR"} />
-          <Bodies1bold
-            greyBody={"Choose the"}
-            purpleBody={"person"}
-            greyBodyNext={"you want in your paradise, maybe you ?"}
-          />
+      <div>
+        {responseImage && <img src={responseImage} />}
+        <Titles greyTitle={"SELECT YOUR"} purpleTitle={"TRIPR"} />
+        <Bodies1bold
+          greyBody={"Choose the"}
+          purpleBody={"person"}
+          greyBodyNext={"you want in your paradise, maybe you ?"}
+        />
+        <div
+          className={`${
+            !isUploaded &&
+            "h-[350px] w-[70%] min-h-[400px] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
+          } w-full `}
+        >
           <div
-            className={`${
-              !isUploaded &&
-              "h-[350px] w-[70%] min-h-[400px] mx-auto flex flex-col border-dashed border-4 rounded-[50px] border-gray-300 bg-white justify-center items-center"
-            } w-full `}
+            className="mt-5 w-full flex justify-center align-middle items-center"
+            {...getRootProps()}
           >
-            <div
-              className="mt-5 w-full flex justify-center align-middle items-center"
-              {...getRootProps()}
-            >
-              <input {...getInputProps()} />
-              {isDragActive ? (
-                <div className="h-4/5 ">Drop the Image here</div>
-              ) : (
-                <div className="font-nunito text-3xl">
-                  <span className="font-bold text-purpleText">
-                    drag & drop.
-                  </span>
-                </div>
-              )}
-            </div>
-            <p className="text-sm text-center mt-4">
-              Format <span className="font-bold mx-1">jpg, png</span> ou
-              <span className="font-bold mx-1">webp</span>.<br />
-              Max
-              <span className="font-bold mx-1">30 Mo</span>.
-            </p>
-            <div className="w-full flex justify-center align-middle items-center">
-              {yourImage.map((upFile) => {
-                return (
-                  <img src={upFile.preview} className="w-[80%]" alt="preview" />
-                );
-              })}
-            </div>
+            <input {...getInputProps()} />
+            {isDragActive ? (
+              <div className="h-4/5 ">Drop the Image here</div>
+            ) : (
+              <div className="font-nunito text-3xl">
+                <span className="font-bold text-purpleText">drag & drop.</span>
+              </div>
+            )}
           </div>
-          <div className="flex justify-center pt-10">
-            <ButtonCTA
-              cta={"UPLOAD"}
-              func={() => removeBackgroundApiCall(acceptedFiles[0])}
-            />
+          <p className="text-sm text-center mt-4">
+            Format <span className="font-bold mx-1">jpg, png</span> ou
+            <span className="font-bold mx-1">webp</span>.<br />
+            Max
+            <span className="font-bold mx-1">30 Mo</span>.
+          </p>
+          <div className="w-full flex justify-center align-middle items-center">
+            {yourImage.map((upFile) => {
+              return (
+                <img src={upFile.preview} className="w-[80%]" alt="preview" />
+              );
+            })}
           </div>
         </div>
-      )}
-      {isStep3 && (
-        <Step3
-          responseImage={responseImage}
-          backgroundChosen={backgroundChosen}
-        />
-      )}
+        <div className="flex justify-center pt-10">
+          <ButtonCTA
+            cta={"UPLOAD"}
+            func={() => removeBackgroundApiCall(acceptedFiles[0])}
+          />
+        </div>
+      </div>
     </div>
   );
 };

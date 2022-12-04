@@ -6,14 +6,7 @@ import { gradientpurple } from "../../utils/DesignTools";
 import Titles from "../Shared/Titles";
 import ButtonCategories from "../Shared/ButtonCategories";
 
-function Background({
-  setBackgroundChosen,
-  setIsHome,
-  setIsStep1,
-  setIsStep2,
-  setIsStep3,
-  setIsDownload,
-}) {
+function Background({ setBackgroundChosen, setIsDownload, setStep }) {
   const [notYetSelectedCategory, setNotYetSelectedCategory] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [backgroundImages, setBackgroundImages] = useState([]);
@@ -47,11 +40,8 @@ function Background({
         <ResultCarousel
           backgroundImages={backgroundImages}
           setBackgroundChosen={setBackgroundChosen}
-          setIsHome={setIsHome}
-          setIsStep1={setIsStep1}
-          setIsStep2={setIsStep2}
-          setIsStep3={setIsStep3}
           setIsDownload={setIsDownload}
+          setStep={setStep}
         />
       )}
 
