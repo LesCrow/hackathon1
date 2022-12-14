@@ -2,9 +2,9 @@
 
 Hackathon project about giving tripping dreams to everyone.
 
-Theme : Trip
-Team : Faany, Tomahawkiwi, Damsbot64, Lucas and LesCrow.
-API : Pixabay, ClipDrop
+Theme : Trip </br>
+Team : Faany, Tomahawkiwi, Damsbot64, Lucas and LesCrow. </br>
+API : Pixabay, ClipDrop </br>
 
 # Overview app
 
